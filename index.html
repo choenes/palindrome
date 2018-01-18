@@ -12,9 +12,11 @@ function isPalindrome() {
     var res = str.replace(/[^\w\d]/g, "").toLowerCase();
     var rev = res.split("").reverse().join("");
     var palindrome = (res == rev)
+    var color = palindrome ? "green" : "red";
+    var results = palindrome ? "is a palindrome" : "isn't a palindrome";
     var result = document.getElementById("result");
-    result.value = rev
-    result.style.color = palindrome ? "green" : "red";
+    result.value = rev + " " + results;
+    result.style.color = color;
 }
 </script>
 </head>
@@ -25,7 +27,7 @@ function isPalindrome() {
 <input id="phrase" value="Madam, I'm Adam!">
 
 <div style="padding-top:15px;padding-bottom:15px">
-  <input id="result" value="Click to see if I'm a palindrome">
+  <input id="result" value="Click to see if I'm a palindrome"> 
 </div>
 
 <button onclick="isPalindrome()">Palindrome?</button>
