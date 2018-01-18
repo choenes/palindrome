@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+input {
+  width: 300px;
+}
+</style>
+<script>
+function isPalindrome() {
+    var str = document.getElementById("phrase").value; 
+    var res = str.replace(/[^\w\d]/g, "").toLowerCase();
+    var rev = res.split("").reverse().join("");
+    var palindrome = (res == rev)
+    var result = document.getElementById("result");
+    result.value = rev
+    result.style.color = palindrome ? "green" : "red";
+}
+</script>
+</head>
+<body>
+
+<h3>Test your phrase to see if it's a palindrome</h3>
+
+<input id="phrase" value="Madam, I'm Adam!">
+
+<div style="padding-top:15px;padding-bottom:15px">
+  <input id="result" value="Click to see if I'm a palindrome">
+</div>
+
+<button onclick="isPalindrome()">Palindrome?</button>
+
+</body>
+</html>
+
